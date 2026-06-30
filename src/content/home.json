@@ -6,7 +6,7 @@
       "id": "hero",
       "label": "Home",
       "title": "Welcome to Our Company",
-      "image": "/images/hero.jpg",
+      "subTitle": "We're glad to see you!",
       "buttonText": "Contact Us"
     },
     {
