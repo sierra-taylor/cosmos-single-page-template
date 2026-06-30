@@ -1,45 +1,47 @@
-media:
-  input: public/images
-  output: /images
-
 content:
   - name: home
     label: Homepage
     type: file
     path: src/content/home.json
+    format: json
 
     fields:
       - name: title
-        label: Site Title
-        type: text
+        type: string
 
       - name: sections
-        label: Sections
-        type: blocks
+        type: block
         list: true
+        blockKey: type
 
-        templates:
-
+        blocks:
           - name: hero
             label: Hero
-
             fields:
-              - { name: id, type: text }
-              - { name: navTitle, label: Navigation Label, type: text }
-              - { name: title, label: Heading, type: text }
-              - { name: image, label: Hero Image, type: image }
-              - { name: buttonText, label: Button Text, type: text }
+              - name: id
+                type: string
+              - name: navTitle
+                type: string
+              - name: title
+                type: string
+              - name: image
+                type: image
+              - name: buttonText
+                type: string
 
           - name: about
             label: About
-
             fields:
-              - { name: id, type: text }
-              - { name: navTitle, label: Navigation Label, type: text }
-              - { name: heading, type: text }
-              - { name: description, type: textarea }
-              - { name: image, type: image }
-              - { name: buttonText, type: text }
+              - name: id
+                type: string
+              - name: navTitle
+                type: string
+              - name: heading
+                type: string
+              - name: description
+                type: text
+              - name: image
+                type: image
 
           - name: services
             label: Services
@@ -56,7 +58,7 @@ content:
 
                 fields:
                   - { name: title, type: text }
-                  - { name: description, type: textarea }
+                  - { name: description, type: text }
 
           - name: gallery
             label: Gallery
@@ -76,8 +78,8 @@ content:
               - { name: id, type: text }
               - { name: navTitle, label: Navigation Label, type: text }
               - { name: heading, type: text }
-              - { name: description, type: textarea }
+              - { name: description, type: text }
               - { name: email, type: text }
               - { name: phone, type: text }
-              - { name: address, type: textarea }
+              - { name: address, type: text }
               - { name: buttonText, type: text }
