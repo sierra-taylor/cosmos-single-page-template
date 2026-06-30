@@ -20,7 +20,7 @@ content:
             fields:
               - name: id
                 type: string
-              - name: navTitle
+              - name: label
                 type: string
               - name: title
                 type: string
@@ -34,7 +34,7 @@ content:
             fields:
               - name: id
                 type: string
-              - name: navTitle
+              - name: label
                 type: string
               - name: heading
                 type: string
@@ -48,7 +48,7 @@ content:
 
             fields:
               - { name: id, type: text }
-              - { name: navTitle, label: Navigation Label, type: text }
+              - { name: label, label: Navigation Label, type: text }
               - { name: heading, type: text }
 
               - name: items
@@ -65,7 +65,7 @@ content:
 
             fields:
               - { name: id, type: text }
-              - { name: navTitle, label: Navigation Label, type: text }
+              - { name: label, label: Navigation Label, type: text }
 
               - name: images
                 type: image
@@ -76,7 +76,7 @@ content:
 
             fields:
               - { name: id, type: text }
-              - { name: navTitle, label: Navigation Label, type: text }
+              - { name: label, label: Navigation Label, type: text }
               - { name: heading, type: text }
               - { name: description, type: text }
               - { name: email, type: text }
