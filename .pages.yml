@@ -1,0 +1,83 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: home
+    label: Homepage
+    type: file
+    path: src/content/home.json
+
+    fields:
+      - name: title
+        label: Site Title
+        type: text
+
+      - name: sections
+        label: Sections
+        type: blocks
+        list: true
+
+        templates:
+
+          - name: hero
+            label: Hero
+
+            fields:
+              - { name: id, type: text }
+              - { name: navTitle, label: Navigation Label, type: text }
+              - { name: title, label: Heading, type: text }
+              - { name: image, label: Hero Image, type: image }
+              - { name: buttonText, label: Button Text, type: text }
+
+          - name: about
+            label: About
+
+            fields:
+              - { name: id, type: text }
+              - { name: navTitle, label: Navigation Label, type: text }
+              - { name: heading, type: text }
+              - { name: description, type: textarea }
+              - { name: image, type: image }
+              - { name: buttonText, type: text }
+
+          - name: services
+            label: Services
+
+            fields:
+              - { name: id, type: text }
+              - { name: navTitle, label: Navigation Label, type: text }
+              - { name: heading, type: text }
+
+              - name: items
+                label: Services
+                type: object
+                list: true
+
+                fields:
+                  - { name: title, type: text }
+                  - { name: description, type: textarea }
+
+          - name: gallery
+            label: Gallery
+
+            fields:
+              - { name: id, type: text }
+              - { name: navTitle, label: Navigation Label, type: text }
+
+              - name: images
+                type: image
+                list: true
+
+          - name: contact
+            label: Contact
+
+            fields:
+              - { name: id, type: text }
+              - { name: navTitle, label: Navigation Label, type: text }
+              - { name: heading, type: text }
+              - { name: description, type: textarea }
+              - { name: email, type: text }
+              - { name: phone, type: text }
+              - { name: address, type: textarea }
+              - { name: buttonText, type: text }
