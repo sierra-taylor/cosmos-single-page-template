@@ -6,19 +6,8 @@
       "id": "hero",
       "label": "Home",
       "title": "Welcome to Our Company",
-      "highlight": "We appreciate your business",
-      "subTitle": "We're a reputable business specializing in great customer service.",
       "image": "/images/hero.jpg",
       "buttonText": "Contact Us"
-    },
-    {
-      "type": "about",
-      "id": "about",
-      "label": "About",
-      "heading": "About Our Company",
-      "description": "We are a team focused on creating quality solutions for our customers.",
-      "image": "/images/about_office.webp",
-      "buttonText": "Learn More"
     },
     {
       "type": "services",
@@ -27,30 +16,31 @@
       "heading": "What We Offer",
       "items": [
         {
-          "image": "",
           "title": "Web Design",
-          "description": "Modern responsive websites built for your business.",
-          "buttonText": "Learn More"
+          "description": "Modern responsive websites built for your business."
         },
         {
-          "image": "",
           "title": "SEO",
-          "description": "Improve your search visibility and reach more customers.",
-          "buttonText": "Learn More"
+          "description": "Improve your search visibility and reach more customers."
         },
         {
-          "image": "",
           "title": "Maintenance",
-          "description": "Keep your website updated and running smoothly.",
-          "buttonText": "Learn More"
+          "description": "Keep your website updated and running smoothly."
         }
       ]
+    },
+    {
+      "type": "about",
+      "id": "about",
+      "label": "About",
+      "heading": "About Our Company",
+      "description": "We are a team focused on creating quality solutions for our customers.",
+      "image": "/images/about_office.webp"
     },
     {
       "type": "gallery",
       "id": "gallery",
       "label": "Gallery",
-      "heading": "Gallery",
       "images": [
         "/images/purple_flower.webp",
         "/images/horse_in_mountains.webp",
