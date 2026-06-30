@@ -1,26 +1,60 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import type { Section } from "../types/sections";
+import page from "../content/home.json";
 // Component Imports
-import Button from '../components/Button.astro';
+import Button from "../components/Button.astro";
+import Hero from "../components/sections/Hero.astro";
+import Services from "../components/sections/Services.astro";
+import About from "../components/sections/About.astro";
+import Gallery from "../components/sections/Gallery.astro";
+import Contact from "../components/sections/Contact.astro";
+import Header from "../components/Header.astro";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
+const components: Record<Section["type"], any> = {
+  hero: Hero,
+  about: About,
+  services: Services,
+  gallery: Gallery,
+  contact: Contact,
+};
+
+const pageSections = page.sections as Section[];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{page.title.toUpperCase()}</title>
+  </head>
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
+  <body>
+    <!-- <div class="grid place-items-center h-screen content-center">
+      <Button>Tailwind Button in Astro!</Button>
+      <a href="/markdown-page" class="p-4 underline"
+        >Markdown is also supported...</a
+      >
+    </div> -->
+
+    <Header
+      site={page.title}
+      logo={"logo" in page ? page.logo : ""}
+      sections={page.sections}
+    />
+    <main>
+      {
+        pageSections.map((section) => {
+          const Component = components[section.type];
+
+          return <Component {...section} />;
+        })
+      }
+    </main>
+  </body>
 </html>

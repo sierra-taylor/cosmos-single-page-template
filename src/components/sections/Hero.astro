@@ -1,0 +1,63 @@
+---
+import type { HeroSection } from "../../types/sections";
+
+const {
+  id,
+  title,
+  highlight,
+  subTitle,
+  image,
+  buttonText,
+  secondaryButtonText,
+} = Astro.props as HeroSection;
+---
+
+<section
+  id="hero"
+  class="hero min-h-screen"
+  style={`background-image: url('${image}')`}
+>
+  {image && <div class="hero-overlay" />}
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-4xl text-center font-semibold md:text-6xl">
+        {title}
+        <span class="text-primary"> {highlight} </span>
+      </h1>
+
+      <h2 class="mt-10 text-lg text-center opacity-80 md:text-2xl">
+        {subTitle}
+      </h2>
+      <div class="flex justify-evenly mt-10">
+        {
+          buttonText && (
+            <a class="btn" href="#contact">
+              {buttonText}
+            </a>
+          )
+        }
+        {
+          secondaryButtonText && (
+            <button class="btn">{secondaryButtonText}</button>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  #hero-section {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+</style>
