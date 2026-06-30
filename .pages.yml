@@ -24,10 +24,14 @@ content:
                 type: string
               - name: title
                 type: string
+              - name: subTitle
+                type: string
               - name: image
                 type: image
               - name: buttonText
                 type: string
+              - name: secondaryButtonText
+                type: image
 
           - name: about
             label: About
@@ -35,8 +39,10 @@ content:
               - name: id
                 type: string
               - name: label
+                label: Navigation Label
                 type: string
               - name: heading
+                label: Header
                 type: string
               - name: description
                 type: text
